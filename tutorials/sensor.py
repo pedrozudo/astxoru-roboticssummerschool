@@ -19,7 +19,7 @@ class Sensor:
     # Method for reading and publishing sensor values
     def read(self):
         try:
-            value = BP.get_sensor(self.BP.PORT_1)
+            value = self.BP.get_sensor(self.BP.PORT_1)
             self.pub.publish(value)
         except brickpi3.SensorError:
             pass
